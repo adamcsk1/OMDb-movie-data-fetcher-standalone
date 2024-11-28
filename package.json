@@ -1,0 +1,18 @@
+{
+  "name": "omdb-movie-data-fetcher-standalone",
+  "version": "1.0.0",
+  "description": "Generate Markdown content for movies or series based on the OMDb response, and send that Markdown content to a webhook.",
+  "scripts": {
+    "start:dev": "npx http-server ./src/",
+    "format": "prettier --write .",
+    "lint": "eslint . ",
+    "lint:fix": "eslint . --fix "
+  },
+  "author": "adamcsk1",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.15.0",
+    "http-server": "^14.1.1",
+    "prettier": "^3.4.1"
+  }
+}
