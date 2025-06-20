@@ -1,12 +1,12 @@
 export default (text) => {
   if (
-      navigator.userAgent.match(/Android/i) ||
-      navigator.userAgent.match(/webOS/i) ||
-      navigator.userAgent.match(/iPhone/i) ||
-      navigator.userAgent.match(/iPad/i) ||
-      navigator.userAgent.match(/iPod/i) ||
-      navigator.userAgent.match(/BlackBerry/i) ||
-      navigator.userAgent.match(/Windows Phone/i)
+    navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)
   ) {
     if (window.clipboardData && window.clipboardData.setData) window.clipboardData.setData('Text', text);
     else if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
@@ -25,5 +25,4 @@ export default (text) => {
       }
     } else navigator.clipboard.writeText(text);
   } else navigator.clipboard.writeText(text);
-
-}
+};

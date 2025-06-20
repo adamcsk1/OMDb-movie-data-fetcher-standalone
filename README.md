@@ -7,6 +7,7 @@ This is a fork project based on the [OMDb movie data fetcher](https://github.com
 ```
 npm run start:dev
 ```
+
 # Usage
 
 You can use the standalone OMDb movie data fetcher with the development server by running `npm run start:dev`, or you can host it on a web server such as Nginx.

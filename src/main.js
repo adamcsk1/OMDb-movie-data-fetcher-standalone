@@ -11,7 +11,7 @@ import Webhook from './webhook.js';
   document.getElementById('search-button').addEventListener('click', async () => {
     const values = getDOMValues();
     storeConfig(values);
-     await searchHandler(values);
+    await searchHandler(values);
   });
 
   document.getElementById('generate-button').addEventListener('click', async () => {
@@ -26,16 +26,16 @@ import Webhook from './webhook.js';
     await generationHandler(values);
     const elementWebhookStatus = document.getElementById('webhook-status');
     try {
-      elementWebhookStatus.innerText = ('Pending');
+      elementWebhookStatus.innerText = 'Pending';
       const webhook = new Webhook({
         webhookUrl: values.config.webhookUrl,
         webhookAuthorization: values.config.webhookAuthorization,
         webhookBody: values.config.webhookBody,
       });
-      elementWebhookStatus.innerText = ('Ok');
-    await webhook.send(lastGeneratedMdContent);
+      elementWebhookStatus.innerText = 'Ok';
+      await webhook.send(lastGeneratedMdContent);
     } catch (error) {
-      elementWebhookStatus.innerText = ('Error');
+      elementWebhookStatus.innerText = 'Error';
       alert(String(error));
     }
   });
@@ -62,8 +62,8 @@ import Webhook from './webhook.js';
       document.getElementById('webhook-body').value = storedData.webhookBody;
       document.getElementById('store-config').checked = true;
       fetcher.setOMDbApiKey(storedData.omdbApiKey);
-    } catch (error){
-      console.error(error)
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -84,12 +84,12 @@ import Webhook from './webhook.js';
   const searchHandler = async (values) => {
     const elementSearchStatus = document.getElementById('search-status');
     try {
-      elementSearchStatus.innerText = ('Pending');
+      elementSearchStatus.innerText = 'Pending';
       fetcher.setOMDbApiKey(values.config.omdbApiKey);
       await fetcher.getMatchedContents(values.data.searchValue);
-      elementSearchStatus.innerText = ('Ok');
+      elementSearchStatus.innerText = 'Ok';
     } catch (error) {
-      elementSearchStatus.innerText = ('Error');
+      elementSearchStatus.innerText = 'Error';
       alert(String(error));
     }
   };

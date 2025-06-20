@@ -35,8 +35,14 @@ export default class MdContentGenerator {
       resultContent = resultContent.replaceAll(`{{${key}}}`, value);
     }
 
-    resultContent = resultContent.replace('{{YoutubeQuery}}',encodeURIComponent(`${this.#omdbData.Title} ${this.#omdbData.Year} trailer`));
-    resultContent = resultContent.replace('{{WebQuery}}',encodeURIComponent(`${this.#omdbData.Title} ${this.#omdbData.Year}`));
+    resultContent = resultContent.replace(
+      '{{YoutubeQuery}}',
+      encodeURIComponent(`${this.#omdbData.Title} ${this.#omdbData.Year} trailer`),
+    );
+    resultContent = resultContent.replace(
+      '{{WebQuery}}',
+      encodeURIComponent(`${this.#omdbData.Title} ${this.#omdbData.Year}`),
+    );
 
     return resultContent;
   }
