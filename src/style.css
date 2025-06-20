@@ -1,0 +1,60 @@
+:root {
+  --background-color: rgba(0, 0, 0, 0.9);
+  --text-color: #c3c3c3;
+  --border-color: gray;
+  --button-background-color: #c3c3c3;
+  --button-color: black;
+  --border-radius: 5px;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: .5rem;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  label:not(.default-display),
+  small {
+    display: block;
+  }
+
+  input[type='text'], select, textarea {
+    margin-top: 0.25rem;
+    padding: 0.25rem;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+  }
+
+  input:not(.default-margin-bottom) {
+    margin-bottom: 1rem;
+  }
+
+  small {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    margin: 1rem 0;
+    padding: .5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+    border: 0 none;
+    cursor: pointer;
+  }
+
+  textarea {
+    display: block;
+    border: 1px solid var(--border-color);
+  }
+}

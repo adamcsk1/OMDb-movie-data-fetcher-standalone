@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>OMDb movie data fetcher standalone</title>
+    <base href="./" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>OMDb movie data fetcher standalone</h1>
+    <hr />
+    <h2>Config</h2>
+    <input type="checkbox" id="store-config" name="store-config" value="store" />
+    <label for="store-config" class="default-display">Store config in the Local Storage</label><br />
+
+    <label for="omdb-api-key">OMDb api key:</label>
+    <input type="text" id="omdb-api-key" name="omdb-api-key" class="default-margin-bottom" />
+    <small>You could generate a free OMDb api key here: https://www.omdbapi.com/apikey.aspx"</small>
+
+    <label for="webhook-url">Webhook:</label>
+    <input type="text" id="webhook-url" name="webhook-url" />
+
+    <label for="webhook-authorization">Webhook authorization:</label>
+    <input type="text" id="webhook-authorization" name="webhook-authorization" />
+
+    <label for="webhook-body">Webhook body:</label>
+    <textarea type="text" id="webhook-body" name="webhook-body" class="default-margin-bottom" rows="10"></textarea>
+    <small>Replace keys: {{MD_CONTENT}}, {{MD_DATE}}</small>
+
+    <h2>Search</h2>
+    <label for="search-value">Movie title or IMDb id or IMDb url:</label>
+    <input type="text" id="search-value" name="search-value" />
+
+    <button id="search-button">Search</button>
+    &nbsp;Status: <span id="search-status">-</span>
+
+    <label for="selected-movie">Selected movie / series:</label>
+    <select id="selected-movie" name="selected-movie"></select>
+
+    <h2>Modifiers</h2>
+    <label for="tags">Tags:</label>
+    <input type="text" id="tags" name="tags" class="default-margin-bottom" />
+    <small>Separate by space.</small>
+
+    <button id="generate-button">Generate</button>
+    <button id="generate-and-send-button">Generate and send to the webhook</button>
+    &nbsp;Status: <span id="webhook-status">-</span>
+
+    <h2>Md content</h2>
+
+    <textarea id="generated-content" rows="10"></textarea>
+
+    <button id="copy-button">Copy to clipboard</button>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
